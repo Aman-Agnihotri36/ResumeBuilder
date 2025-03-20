@@ -12,3 +12,77 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id          Int       @id @default(autoincrement())
+  clerkId     String
+  firstName   String
+  lastName    String
+  email       String    @unique
+  username    String
+  photo       String?
+  createdAt   DateTime  @default(now())
+  allTemplets Templet[]
+}
+
+model Templet {
+  id           Int            @id @default(autoincrement())
+  templetName  String
+  userRole     String         @unique
+  userId       Int
+  user         User           @relation(fields: [userId], references: [id])
+  PersonalInfo PersonalInfo[]
+  Summery      Summery[]
+  Skills       Skills[]
+
+  Education  Education[]
+  Experience Experience[]
+}
+
+model PersonalInfo {
+  id Int @id @default(autoincrement())
+
+  firstName String
+  lastName  String
+  title     String
+  email     String
+  phone     String
+  location  String
+  templetId Int
+  temp      Templet @relation(fields: [templetId], references: [id])
+}
+
+model Summery {
+  id      Int    @id @default(autoincrement())
+  summery String
+
+  templetId Int
+  temp      Templet @relation(fields: [templetId], references: [id])
+}
+
+model Skills {
+  id Int @id @default(autoincrement())
+
+  allSkills String[]
+  templetId Int
+  temp      Templet  @relation(fields: [templetId], references: [id])
+}
+
+model Education {
+  id             Int     @id @default(autoincrement())
+  templetId      Int
+  temp           Templet @relation(fields: [templetId], references: [id])
+  degree         String
+  institution    String
+  graduationDate String
+  certification  String
+}
+
+model Experience {
+  id                    Int     @id @default(autoincrement())
+  templetId             Int
+  temp                  Templet @relation(fields: [templetId], references: [id])
+  jobTitle              String
+  companyName           String
+  experienceDescription String
+}
