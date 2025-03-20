@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
 
-import { useAppDispatch, useAppSelector } from "@/lib/hooks"
+import { useAppSelector } from "@/lib/hooks"
 import Templet1 from "@/components/templets/Templet1"
 import Templet2 from "@/components/templets/Templet2"
 import Templet4 from "@/components/templets/Templet4"
