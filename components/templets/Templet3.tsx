@@ -121,6 +121,7 @@ function ExperienceItem({ title, company, period, responsibilities }: { title: a
             <p className="text-gray-600">{company}</p>
             <p className="text-sm text-gray-500 mb-2">{period}</p>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
+                {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
                 {responsibilities.map((item: any, index: any) => (
                     <li key={index}>{item}</li>
                 ))}

@@ -51,27 +51,27 @@ export function ResumePreview() {
             <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Work Experience</h2>
                 <div className="space-y-6">
-                    {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
-                    {
 
-                        Experience.map((exp: any, index: number) => (
-                            <div key={index}>
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-xl font-medium text-gray-800">{exp?.jobTitle}</h3>
-                                        <div className="flex items-center gap-2 text-gray-600 mt-1">
-                                            <Building className="w-4 h-4" />
-                                            <span>{exp?.companyName}</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-gray-600">
-                                        <Calendar className="w-4 h-4" />
-                                        {/* <span>{exp?.startDate} - {exp?.endDate || 'Present'}</span> */}
+
+                    {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
+                    {Experience.map((exp: any, index: number) => (
+                        <div key={index}>
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-xl font-medium text-gray-800">{exp?.jobTitle}</h3>
+                                    <div className="flex items-center gap-2 text-gray-600 mt-1">
+                                        <Building className="w-4 h-4" />
+                                        <span>{exp?.companyName}</span>
                                     </div>
                                 </div>
-                                <p className="mt-2 text-gray-700 whitespace-pre-wrap">{exp?.experienceDescription}</p>
+                                <div className="flex items-center gap-2 text-gray-600">
+                                    <Calendar className="w-4 h-4" />
+                                    {/* <span>{exp?.startDate} - {exp?.endDate || 'Present'}</span> */}
+                                </div>
                             </div>
-                        ))
+                            <p className="mt-2 text-gray-700 whitespace-pre-wrap">{exp?.experienceDescription}</p>
+                        </div>
+                    ))
                     }
                 </div>
             </div>
@@ -83,23 +83,23 @@ export function ResumePreview() {
             <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
                 <div className="space-y-4">
+
                     {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
-                    {
-                        Education.map((edu: any, index: number) => (
-                            <div key={index}>
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-xl font-medium text-gray-800">{edu.degree}</h3>
-                                        <p className="text-gray-600">{edu.institution}</p>
-                                        <p className="text-gray-600">{edu.certification}</p>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-gray-600">
-                                        <Calendar className="w-4 h-4" />
-                                        <span>{edu.graduationDate || 'Present'}</span>
-                                    </div>
+                    {Education.map((edu: any, index: number) => (
+                        <div key={index}>
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-xl font-medium text-gray-800">{edu.degree}</h3>
+                                    <p className="text-gray-600">{edu.institution}</p>
+                                    <p className="text-gray-600">{edu.certification}</p>
+                                </div>
+                                <div className="flex items-center gap-2 text-gray-600">
+                                    <Calendar className="w-4 h-4" />
+                                    <span>{edu.graduationDate || 'Present'}</span>
                                 </div>
                             </div>
-                        ))
+                        </div>
+                    ))
                     }
                 </div>
             </div>

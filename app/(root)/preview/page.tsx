@@ -22,7 +22,7 @@ import Templet9 from "@/components/templets/Templet9"
 export default function PreviewFirst() {
     const { temp } = useAppSelector(state => state.templet)
 
-    const dispatch = useAppDispatch()
+
     const contentRef = useRef<HTMLDivElement>(null);
     const reactToPrintFn = useReactToPrint({ contentRef });
 
@@ -66,9 +66,7 @@ export default function PreviewFirst() {
             templet: <Templet9 />
         }
     ]
-    function handleDownload() {
-        window.print()
-    }
+
 
     const data = AllTemp.filter(one => one.name == temp)
     return (
