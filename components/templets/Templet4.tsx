@@ -3,22 +3,9 @@
 import type React from "react"
 
 import { Mail, Phone, MapPin, Linkedin, Award, BookOpen, Briefcase, User } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
-// Optional Redux imports
-// let useAppSelector: any
-// let useSelector: any
 
-// // Try to import Redux hooks, but don't fail if they're not available
-// try {
-//   // Dynamic imports to avoid errors when Redux is not available
-//   useAppSelector = require("@/lib/hooks").useAppSelector
-//   useSelector = require("react-redux").useSelector
-// } catch (error) {
-//   // Provide fallbacks if imports fail
-//   useAppSelector = () => ({ temp: true })
-//   useSelector = () => ({})
-// }
 
 export default function Templet4() {
     // Use try/catch to handle potential Redux errors

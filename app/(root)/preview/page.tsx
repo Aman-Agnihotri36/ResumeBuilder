@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
-import { RWebShare } from "react-web-share"
+
 
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import Templet1 from "@/components/templets/Templet1"
@@ -83,16 +83,7 @@ export default function PreviewFirst() {
                     <div className="flex mt-6 justify-around">
                         <button onClick={() => reactToPrintFn()} className="bg-purple-600 text-white p-2 rounded-md">Download</button>
 
-                        <RWebShare
-                            data={{
-                                text: "Hellow Everyone, This is my resume please open url to see",
-                                url: `${process.env.NEXT_PUBLIC_VITE_BASE_URL}preview`,
-                                title: "Flamingos",
-                            }}
-                            onClick={() => console.log("shared successfully!")}
-                        >
-                            <button className="bg-purple-600 text-white p-2 rounded-md">Share</button>
-                        </RWebShare>
+
                     </div>
 
 

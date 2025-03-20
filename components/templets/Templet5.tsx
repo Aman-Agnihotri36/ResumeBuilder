@@ -3,16 +3,14 @@
 import type React from "react"
 
 import { Mail, Phone, MapPin, Linkedin, Award, BookOpen, Briefcase, ChevronRight } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
-// Optional Redux imports
-let useAppSelector: any
-let useSelector: any
+
 
 
 export default function Templet5() {
     // Safe Redux state access
-    const [tempFromRedux, setTempFromRedux] = useState<boolean | null>(null)
+    const [tempFromRedux] = useState<boolean | null>(null)
 
 
 

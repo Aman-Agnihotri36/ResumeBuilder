@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { useAppSelector } from "@/lib/hooks"
 

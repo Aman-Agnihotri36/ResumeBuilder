@@ -1,6 +1,7 @@
 import { useAppSelector } from '@/lib/hooks'
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
-import { useSelector } from 'react-redux'
+
+
 
 export default function Templet3() {
     const { temp } = useAppSelector(state => state.templet)
