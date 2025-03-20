@@ -95,16 +95,16 @@ export default function Templet3() {
 
                 <Section title="PUBLICATIONS">
                     <ul className="list-disc list-inside space-y-2 text-gray-700">
-                        <li>"Advancements in Generative Adversarial Networks for Image Synthesis" - IEEE Conference on Computer Vision and Pattern Recognition, 2021</li>
-                        <li>"Optimizing Reinforcement Learning Algorithms for Real-time Decision Making" - NeurIPS, 2020</li>
-                        <li>"Novel Approaches to Sentiment Analysis Using Deep Learning" - Journal of Machine Learning Research, 2019</li>
+                        <li>Advancements in Generative Adversarial Networks for Image Synthesis - IEEE Conference on Computer Vision and Pattern Recognition, 2021</li>
+                        <li>Optimizing Reinforcement Learning Algorithms for Real-time Decision Making - NeurIPS, 2020</li>
+                        <li>Novel Approaches to Sentiment Analysis Using Deep Learning - Journal of Machine Learning Research 2019</li>
                     </ul>
                 </Section>
             </div>
         </div>
     )
 }
-
+{/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */ }
 function Section({ title, children }: { title: any, children: any }) {
     return (
         <section>
@@ -113,7 +113,7 @@ function Section({ title, children }: { title: any, children: any }) {
         </section>
     )
 }
-
+{/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */ }
 function ExperienceItem({ title, company, period, responsibilities }: { title: any, company: any, period: any, responsibilities: any }) {
     return (
         <div className="mb-6">

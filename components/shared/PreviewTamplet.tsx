@@ -51,9 +51,10 @@ export function ResumePreview() {
             <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Work Experience</h2>
                 <div className="space-y-6">
-
+                    {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
                     {
-                        Experience.map((exp: any, index: any) => (
+
+                        Experience.map((exp: any, index: number) => (
                             <div key={index}>
                                 <div className="flex justify-between items-start">
                                     <div>
@@ -82,9 +83,9 @@ export function ResumePreview() {
             <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
                 <div className="space-y-4">
-
+                    {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
                     {
-                        Education.map((edu: any, index: any) => (
+                        Education.map((edu: any, index: number) => (
                             <div key={index}>
                                 <div className="flex justify-between items-start">
                                     <div>
@@ -109,8 +110,8 @@ export function ResumePreview() {
             <div>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
                 <div className="flex flex-wrap gap-2">
-
-                    {Skill?.map((skill: any, index: any) => (
+                    {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
+                    {Skill?.map((skill: any, index: number) => (
                         <div
                             key={index}
                             className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"

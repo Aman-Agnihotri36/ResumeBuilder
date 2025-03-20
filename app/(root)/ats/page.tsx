@@ -234,7 +234,7 @@ function Ats() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle>Suggested Improvements</CardTitle>
-                                    <CardDescription>Recommendations to improve your resume's ATS compatibility</CardDescription>
+                                    <CardDescription>Recommendations to improve your resumes ATS compatibility</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <ul className="space-y-3">

@@ -9,7 +9,7 @@ import { useState } from "react"
 
 export default function Templet4() {
     // Use try/catch to handle potential Redux errors
-    const [temp, setTemp] = useState(true)
+    const [temp] = useState(true)
 
     //   useEffect(() => {
     //     let tempValue = true

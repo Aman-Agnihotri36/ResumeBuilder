@@ -50,6 +50,7 @@ export const Education = ({ NextStep, PrevStep }: { NextStep: () => void, PrevSt
                 Add Education
             </button>
 
+            {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
             {EduForm?.map((education: any, index: any) => (
                 <div key={index} className="relative p-4 mt-5 border rounded-lg mb-4  shadow-lg">
                     <button
