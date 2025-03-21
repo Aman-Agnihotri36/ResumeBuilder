@@ -2,8 +2,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
-import { json } from 'stream/consumers'
-import { CreateUser } from '@/lib/actions/user.action'
+
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
@@ -62,7 +61,7 @@ export async function POST(req: Request) {
         const { id, first_name, last_name, image_url, email_addresses, username } = evt?.data
 
         try {
-            const userInfo = {
+            let userInfo = {
                 clerkId: id,
                 firstName: first_name,
                 last_name: last_name,
@@ -89,7 +88,10 @@ export async function POST(req: Request) {
                 return NextResponse.json({ message: 'USER NOT CREATED', }, { status: 400 })
             }
 
-        } catch (err: any) {
+
+        }
+        // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+        catch (err: any) {
             console.log('FACING ISSUE WHILE CREATING USER', err)
             return NextResponse.json({
                 message: 'ERROR CREATING USER',

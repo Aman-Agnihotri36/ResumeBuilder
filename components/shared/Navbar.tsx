@@ -1,5 +1,5 @@
-import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/nextjs"
-import { Button } from "@mui/material"
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+
 import Link from "next/link"
 
 

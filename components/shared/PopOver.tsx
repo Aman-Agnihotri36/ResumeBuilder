@@ -27,6 +27,7 @@ export default function FormDialog() {
         router.push("/createresume");
     };
 
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const handleChange = (e: any) => {
         dispatch(TempletActions.setResumeTitle(e.target.value))
     }
