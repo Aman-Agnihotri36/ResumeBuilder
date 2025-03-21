@@ -64,6 +64,8 @@ function CreateResume() {
         dispatch(TempletActions.removeSize())
     }, [])
 
+    const { resumeTitle } = useAppSelector((store) => store.templet)
+
     const { temp } = useAppSelector((store) => store.templet)
     console.log('MY TEMPA', temp)
 
@@ -73,6 +75,7 @@ function CreateResume() {
     // const data = currentResume[0].name
     return (
         <div >
+            <p>{resumeTitle}</p>
             {/* <button className=" p-2 px-6 rounded-md text-[1.1rem] bg-purple-500 text-white ">
                 Save &#8594;
 

@@ -1,4 +1,6 @@
+import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/nextjs"
 import { Button } from "@mui/material"
+import Link from "next/link"
 
 
 export const Navbar = () => {
@@ -14,8 +16,16 @@ export const Navbar = () => {
                     <p className="text-gray-600">Pricing</p>
                 </div>
                 <div className="flex gap-7 justify-center items-center ">
-                    <Button>LogIn</Button>
-                    <Button>SignUp</Button>
+                    <SignedIn>
+                        <UserButton signInUrl='/' />
+                    </SignedIn>
+                    <SignedOut>
+                        <button className="rounded-full size='lg">
+                            <Link href='/sign-in'>
+                                Login
+                            </Link>
+                        </button>
+                    </SignedOut>
                 </div>
             </div>
             <hr className=" opacity-80" />

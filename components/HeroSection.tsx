@@ -1,3 +1,5 @@
+import FormDialog from "./shared/PopOver"
+
 export const HeroSection = () => {
 
     return (
@@ -12,10 +14,11 @@ export const HeroSection = () => {
                 </p>
 
                 <div className="flex gap-4 justify-center">
-                    <button className="bg-white p-2 px-6 rounded-md text-[1.1rem] text-purple-700 hover:bg-zinc-200">
-                        Get Started
+                    {/* <button className="bg-white p-2 px-6 rounded-md text-[1.1rem] text-purple-700 hover:bg-zinc-200">
+                        
 
-                    </button>
+                    </button> */}
+                    <FormDialog />
                     <button className="bg-white p-2 px-6 rounded-md text-[1.1rem] text-purple-700 hover:bg-zinc-200">
                         View Templet
 

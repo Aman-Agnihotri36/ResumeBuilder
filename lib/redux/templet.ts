@@ -4,11 +4,13 @@ import { createSlice } from '@reduxjs/toolkit'
 type Prop = {
     // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     temp: any,
+    resumeTitle: string,
     size: boolean
 }
 
 const initialState: Prop = {
     temp: '',
+    resumeTitle: '',
     size: false
 };
 
@@ -18,6 +20,10 @@ const TempletSlice = createSlice({
     reducers: {
         setTemplet: (state, action) => {
             state.temp = action.payload
+        },
+
+        setResumeTitle: (state, action) => {
+            state.resumeTitle = action.payload
         },
 
         setSize: (state) => {

@@ -2,6 +2,9 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
+import { json } from 'stream/consumers'
+import { CreateUser } from '@/lib/actions/user.action'
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
     const SIGNING_SECRET = process.env.SIGNING_SECRET
@@ -53,8 +56,48 @@ export async function POST(req: Request) {
     console.log(`Received webhook with ID ${id} and event type of ${eventType}`)
     console.log('Webhook payload:', body)
 
+
+
     if (eventType === 'user.created') {
-        console.log('Your User created Successfully')
+        const { id, first_name, last_name, image_url, email_addresses, username } = evt?.data
+
+        try {
+            const userInfo = {
+                clerkId: id,
+                firstName: first_name,
+                last_name: last_name,
+                email: email_addresses[0].email_address,
+                username: username,
+                photo: image_url
+            }
+
+
+
+
+            // const data = await CreateUser(userInfo)
+            const data = await fetch('/api/user', {
+                method: 'POST',
+                body: JSON.stringify(userInfo)
+            })
+
+            const userdata = await data.json()
+
+            if (userdata) {
+                return NextResponse.json({ message: 'USER CREATED', item: data }, { status: 200 })
+            }
+            if (!userdata) {
+                return NextResponse.json({ message: 'USER NOT CREATED', }, { status: 400 })
+            }
+
+        } catch (err: any) {
+            console.log('FACING ISSUE WHILE CREATING USER', err)
+            return NextResponse.json({
+                message: 'ERROR CREATING USER',
+                error: err.message
+            }, { status: 500 })
+        }
+
+
     }
 
     return new Response('Webhook received', { status: 200 })
