@@ -8,7 +8,7 @@ export const CreateUser = async (userInfo: any) => {
 
     try {
         console.log('YOUR USER INFO', userInfo)
-        let { firstName, lastName, username, email, clerkId, photo } = userInfo
+        const { firstName, lastName, username, email, clerkId, photo } = userInfo
 
         if (!firstName || !lastName || !username || !email || !clerkId) {
             return new Response(JSON.stringify({
