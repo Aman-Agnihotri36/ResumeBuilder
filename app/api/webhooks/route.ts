@@ -61,7 +61,7 @@ export async function POST(req: Request) {
         const { id, first_name, last_name, image_url, email_addresses, username } = evt?.data
 
         try {
-            let userInfo = {
+            const userInfo = {
                 clerkId: id,
                 firstName: first_name,
                 last_name: last_name,

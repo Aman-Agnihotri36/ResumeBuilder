@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     console.log('YOUR USER DATAAAA', userData)
 
     try {
-        let { firstName, lastName, username, email, clerkId, photo } = userData
+        const { firstName, lastName, username, email, clerkId, photo } = userData
 
         if (!firstName || !lastName || !username || !email || !clerkId) {
             return new Response(JSON.stringify({
