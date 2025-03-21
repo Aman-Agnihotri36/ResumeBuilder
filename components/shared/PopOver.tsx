@@ -21,6 +21,7 @@ export default function FormDialog() {
 
     const dispatch = useAppDispatch()
     const router = useRouter()
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const handleSubmit = (e: any) => {
         e.preventDefault(); // Prevent default form submission
 
