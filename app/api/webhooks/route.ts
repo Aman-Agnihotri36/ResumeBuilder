@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
 
 import { NextResponse } from 'next/server'
+import { CreateUser } from '@/lib/actions/user.action'
 
 export async function POST(req: Request) {
     const SIGNING_SECRET = process.env.SIGNING_SECRET
@@ -73,18 +74,18 @@ export async function POST(req: Request) {
 
 
 
-            // const data = await CreateUser(userInfo)
-            const data = await fetch('/api/user', {
-                method: 'POST',
-                body: JSON.stringify(userInfo)
-            })
+            const data = await CreateUser(userInfo)
+            // const data = await fetch('/api/user', {
+            //     method: 'POST',
+            //     body: JSON.stringify(userInfo)
+            // })
 
-            const userdata = await data.json()
+            // const userdata = await data.json()
 
-            if (userdata) {
+            if (data) {
                 return NextResponse.json({ message: 'USER CREATED', item: data }, { status: 200 })
             }
-            if (!userdata) {
+            if (!data) {
                 return NextResponse.json({ message: 'USER NOT CREATED', }, { status: 400 })
             }
 
