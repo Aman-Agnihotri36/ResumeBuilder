@@ -2,7 +2,7 @@
 
 import prisma from "../prisma";
 
-
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export const CreateUser = async (userInfo: any) => {
 
 
