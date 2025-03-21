@@ -28,6 +28,8 @@ export const CreateUser = async (userInfo: any) => {
             }
         })
 
+        console.log('USER CREATED SUCCESSUFLLY', createdUser)
+
         return {
             success: true,
             message: "User created successfully",
